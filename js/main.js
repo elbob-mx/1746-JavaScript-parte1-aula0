@@ -1,5 +1,21 @@
-			var title = document.querySelector(".title"); // selecciona el objeto 'h1'
-			console.log(title); // se muestra el objeto en consola
-			console.log(title.textContent); //  se muetra el contenido del objeto 'title'
-			title.textContent = "Buena Vida Nutrición";  // se modifica el contenido del objeto por el que se desea
-			console.log(" -> printing from main.js <- ");
+var paciente = document.querySelector("#paciente-uno");
+
+var tdPeso = paciente.querySelector(".info-peso");
+var peso = tdPeso.textContent;
+
+var tdAltura = paciente.querySelector(".info-altura");
+var altura = tdAltura.textContent;
+
+// console check --------------->
+
+console.log(paciente);
+
+console.log(tdPeso);
+console.log(peso);
+
+console.log(tdAltura);
+console.log(altura);
+
+// fórmula índice masa corporal
+var imc = peso / altura**2;
+console.log(imc);
