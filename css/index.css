@@ -8,7 +8,7 @@ body{
 }
 
 header{
-	background-color: CornflowerBlue;
+	background-color: Teal;
 	height: 6em;
 	color: #FFF;
 	margin-bottom: 1em;
@@ -45,11 +45,14 @@ section{
 }
 
 section h2{
-	font-size: 3em;
+	color: darkslategray;
+	font-size: 2em;
 	display: block;
 	padding-bottom: .5em;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: .5em;
+	font-family: sans-serif;
+	font-weight: 700;
 }
 
 table{
@@ -133,3 +136,7 @@ button[disabled=disabled], button:disabled {
 .campo-invalido{
 	border: 1px solid red;
 }
+
+/* #imcPtUno {
+	background-color: white;
+} */
