@@ -5,6 +5,7 @@
 body{
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	background-color: wheat;
 }
 
 header{
@@ -45,33 +46,33 @@ section{
 }
 
 section h2{
-	color: darkslategray;
+	color: teal;
 	font-size: 2em;
 	display: block;
 	padding-bottom: .5em;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px dotted dimgray;
 	margin-bottom: .5em;
 	font-family: sans-serif;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 table{
 	width: 100%;
 	margin-bottom : .5em;
-    table-layout: fixed;
-
+  table-layout: fixed;
+	border-radius: 15px;
 }
 
 td, th {
 	padding: .7em;
 	margin: 0;
-	border: 1px solid #ccc;
+	border: 1px solid dimgray;
 	text-align: center;
 }
 
 th{
 	font-weight: bold;
-	background-color: #EEE;
+	background-color: #5badad;
 }
 
 label{
@@ -135,4 +136,10 @@ button[disabled=disabled], button:disabled {
 
 .campo-invalido{
 	border: 1px solid red;
+}
+
+.paciente-incorrecto{
+	background-color: tomato;
+	/* font-style: italic; */
+	font-weight: 700;
 }

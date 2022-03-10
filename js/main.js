@@ -24,22 +24,23 @@ var alturaEsValida = true;
 // si una de las condiciones se cumple, el resultado es VERDADERO
 if((peso <= 0) || (peso >= 500)) {
   console.log ("----> el peso indicado no es válido");
-  tdPeso.textContent = "peso no válido";
+  tdImc.textContent = "peso no válido";
   pesoEsValido = false;
+  paciente.classList.add("paciente-incorrecto");
 };
 
 // si una de las condiciones se cumple, el resultado es VERDADERO
 if((altura <= 0) || (altura >= 2.5)) {
   console.log ("----> la altura indicada no es válida");
-  tdAltura.textContent = "altura no válida";
+  tdImc.textContent = "altura no válida";
   alturaEsValida = false;
+  paciente.classList.add("paciente-incorrecto");
 };
 
 // ambas condiciones tienen que ser válidas para que proceda
 if (pesoEsValido && alturaEsValida) {
-  var ptImc = Math.floor(peso / altura**2); // fórmula índice masa corporal con redondeado 'floor'
-  tdImc.textContent = ptImc; // el contenido de tdIMC será igual al resultado de la fórmula en 'ptImc'
-} else {tdImc.textContent = "datos no válidos";
-};
+  var ptImc = /*Math.floor*/ peso / altura**2; // fórmula índice masa corporal con redondeado 'floor'
+  tdImc.textContent = ptImc.toFixed(2); // el contenido de tdIMC será igual al resultado de la fórmula en 'ptImc' con solo 2 decimales
+}; /* else {tdImc.textContent = "datos no válidos"; }; */
 
 };
