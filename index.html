@@ -30,8 +30,8 @@
           <tbody id="tabla-pacientes">
             <tr class="paciente">
               <td class="info-nombre">Pablo</td>
-              <td class="info-peso">632</td>
-              <td class="info-altura">2.00</td>
+              <td class="info-peso">87</td>
+              <td class="info-altura">1.83</td>
               <td class="info-gordura">10</td>
               <td class="info-imc">0</td>
             </tr>
@@ -47,7 +47,7 @@
             <tr class="paciente">
               <td class="info-nombre">Erica</td>
               <td class="info-peso">54</td>
-              <td class="info-altura">4.2</td>
+              <td class="info-altura">1.57</td>
               <td class="info-gordura">14</td>
               <td class="info-imc">0</td>
             </tr>
@@ -70,5 +70,29 @@
         </table>
       </section>
     </main>
+
+    <section class="container">
+      <h2 id="titulo-form">Adicionar nuevo paciente</h2>
+      <form>
+          <div class="grupo">
+              <label for="nombre">Nombre:</label>
+              <input id="nombre" name="nombre" type="text" placeholder="digite el nombre del paciente" class="campo">
+          </div>
+          <div class="grupo">
+              <label for="peso">Peso:</label>
+              <input id="peso" name="peso" type="text" placeholder="digite el peso del paciente" class="campo campo-medio">
+          </div>
+          <div class="grupo">
+              <label for="altura">Altura:</label>
+              <input id="altura" name="altura" type="text" placeholder="digite la altura del paciente" class="campo campo-medio">
+          </div>
+          <div class="grupo">
+              <label for="gordura">% de Gordura:</label>
+              <input id="gordura" type="text" placeholder="digite el porcentaje de gordura del paciente" class="campo campo-medio">
+          </div>
+          <button type="submit" id="adicionar-paciente" class="boton bto-principal">Adicionar</button>
+      </form>
+  </section>
+
   </body>
 </html>
