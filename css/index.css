@@ -122,7 +122,7 @@ button{
 }
 
 button:active{
-	margin-top: -3px;
+	/* margin-top: -1px; */
 	border: 0;
 	font-weight: 700;
 }
@@ -134,8 +134,7 @@ button[disabled=disabled], button:disabled {
 }
 
 .adicionar-paciente{
-    margin-top: 50px;
-
+    margin: 50px;
 }
 
 .campo-invalido{
@@ -146,4 +145,10 @@ button[disabled=disabled], button:disabled {
 	background-color: tomato;
 	/* font-style: italic; */
 	font-weight: 700;
+}
+
+footer {
+	text-align: center;
+	margin-top: 100px;
+	font-family: monospace;
 }
