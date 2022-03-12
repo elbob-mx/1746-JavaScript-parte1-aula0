@@ -39,8 +39,13 @@ if((altura <= 0) || (altura >= 2.5)) {
 
 // ambas condiciones tienen que ser válidas para que proceda
 if (pesoEsValido && alturaEsValida) {
-  var ptImc = /*Math.floor*/ peso / altura**2; // fórmula índice masa corporal con redondeado 'floor'
-  tdImc.textContent = ptImc.toFixed(2); // el contenido de tdIMC será igual al resultado de la fórmula en 'ptImc' con solo 2 decimales
-}; /* else {tdImc.textContent = "datos no válidos"; }; */
+  tdImc.textContent = calcularIMC(peso, altura);
+  }
+};
 
+
+// FUNCIÓN ENGLOBADA CALCULAR IMC ----------------->
+function calcularIMC(peso, altura) {
+  var ptImc = peso / altura**2;
+  return ptImc.toFixed(2);
 };
