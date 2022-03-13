@@ -5,10 +5,12 @@ botonAdicionar.addEventListener("click", (e) => {
 
   var form = document.querySelector("#form-adicionar");
 
+  // objeto 'paciente'
   var paciente = tomarDatosPacientes(form);
+  console.log(paciente);
 
+  // declara la variable 'tabla' tomando de la 'tabla-pacientes'
   var tabla = document.querySelector("#tabla-pacientes");
-
 
   console.log(" ----> buena adición. ");
 
@@ -44,12 +46,14 @@ botonAdicionar.addEventListener("click", (e) => {
 
 // FUNCIONES *********************************
 
+// función que crea el objeto 'paciente'
 function tomarDatosPacientes(form) {
- // toma datos del formulario
-  nombre = form.nombre.value,
-  peso = form.peso.value,
-  altura = form.altura.value,
-  gordura = form.gordura.value
-
+  // toma datos del formulario
+  var paciente = {
+    nombre: form.nombre.value,
+    peso: form.peso.value,
+    altura: form.altura.value,
+    gordura: form.gordura.value
+  }
   return paciente;
 }
