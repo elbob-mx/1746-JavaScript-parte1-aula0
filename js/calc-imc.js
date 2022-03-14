@@ -30,7 +30,7 @@ for (var i = 0; i < pacientes.length; i++) {
   };
 
   // si una de las condiciones se cumple, el resultado es VERDADERO
-  if ((altura <= 0) || (altura >= 2.72)) {
+  if (!alturaEsValida) {
     console.log("----> la altura indicada no es válida");
     tdImc.textContent = "altura no válida";
     alturaEsValida = false;
@@ -52,7 +52,7 @@ function calcularIMC(peso, altura) {
 
 // VALIDA EL PESO
 function validarPeso(peso) {
-  if(peso > 0 && peso <= 500){
+  if(peso >= 1.00 && peso <= 500){
     return true;
   } else {
     return false;
@@ -61,7 +61,7 @@ function validarPeso(peso) {
 
 // VALIDA LA ALTURA
 function validarAltura(altura) {
-  if(altura > 0 && altura <= 2.72){
+  if(altura >= 0.40 && altura <= 2.72){
     return true;
   } else {
     return false;
