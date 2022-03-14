@@ -3,7 +3,7 @@
  }
 
 body{
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-family: monospace;
 	font-size: 14px;
 	background-color: #fff3dd;
 }
@@ -11,14 +11,15 @@ body{
 header{
 	background-color: Teal;
 	height: 6em;
-	color: #FFF;
+	width: 100%;
+	color: whitesmoke;
 	margin-bottom: 1em;
 	font-weight: 600;
 }
 
 header h1{
 	font-size: 2em;
-	display:inline-block;
+	display: inline-block;
 	vertical-align:	middle;
 }
 header h2{
@@ -52,7 +53,7 @@ section h2{
 	padding-bottom: .5em;
 	border-bottom: 2px dotted dimgray;
 	margin-bottom: .5em;
-	font-family: sans-serif;
+	font-family: monospace;
 	font-weight: 600;
 	margin-top: 20px;
 }
@@ -83,7 +84,9 @@ label{
 }
 
 .campo{
-	margin: 0;
+	font-family: monospace;
+	font-size: ;
+	margin: 5px;
 	padding-bottom: 1em;
 	width: 100%;
 	border: 1px solid #ccc;
@@ -103,6 +106,8 @@ label{
 }
 
 button{
+	font-family: monospace;
+	text-align: center;
 	padding: .5em 2em;
 	border: 0;
 	border-bottom: 3px solid;
@@ -114,11 +119,10 @@ button{
 	color: #fff;
 	background-color: teal;
 	border-color: darkslategray;
-	width: 20%;
-    display: block;
-    clear: both;
-    margin: 10px 0px;
-
+	/* width: 20%; */
+	display: block;
+	clear: both;
+	margin: 10px 0px;
 }
 
 button:active{
@@ -138,17 +142,17 @@ button[disabled=disabled], button:disabled {
 }
 
 .campo-invalido{
-	border: 1px solid red;
+	border: 1px solid tomato;
 }
 
 .paciente-incorrecto{
 	background-color: tomato;
-	/* font-style: italic; */
-	font-weight: 700;
+	font-style: italic;
+	font-weight: 1000;
 }
 
 footer {
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 60px;
 	font-family: monospace;
 }

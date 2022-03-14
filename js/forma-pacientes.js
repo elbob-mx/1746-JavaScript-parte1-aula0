@@ -8,6 +8,7 @@ botonAdicionar.addEventListener("click", (e) => {
   var pacienteTr = construirTr (paciente); // crea TR del paciente adicionado **
   var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
   tabla.appendChild(pacienteTr);
+  form.reset();
 
 });
 
@@ -26,32 +27,17 @@ function tomarDatosPacientes(form) {
   return paciente;
 };
 
+// función que crea las filas 'TR' y celdas 'TD' -------------------------->
 function construirTr(paciente) {
   // crea elementos TD y TR ------------------------>
   var pacienteTr = document.createElement("tr");
   pacienteTr.classList.add("paciente"); // adiciona la clases 'paciente' **
 
-  var nombreTd = document.createElement("td");
-  pacienteTr.classList.add("info-nombre"); // adiciona la clases 'paciente' **
-
-  var pesoTd = document.createElement("td");
-  pacienteTr.classList.add("info-peso"); // adiciona la clases 'paciente' **
-
-  var alturaTd = document.createElement("td");
-  pacienteTr.classList.add("info-altura"); // adiciona la clases 'paciente' **
-
-  var gorduraTd = document.createElement("td");
-  pacienteTr.classList.add("info-gordura"); // adiciona la clases 'paciente' **
-
-  var imcTd = document.createElement("td");
-  pacienteTr.classList.add("info-imc"); // adiciona la clases 'paciente' **
-
-  // toma valores con la propiedad textContext y asigna a variables ------------>
-  nombreTd.textContent = paciente.nombre;
-  pesoTd.textContent = paciente.peso;
-  alturaTd.textContent = paciente.altura;
-  gorduraTd.textContent = paciente.gordura;
-  imcTd.textContent = paciente.imc;
+  var nombreTd = construirTd(paciente.nombre, "info-nombre") // se llama a la función de donde tomará el contenido de la celda 'nombre' **
+  var pesoTd = construirTd(paciente.peso, "info-peso")  // se llama a la función de donde tomará el contenido de la celda 'peso' **
+  var alturaTd = construirTd(paciente.altura, "info-altura")  // se llama a la función de donde tomará el contenido de la celda 'altura' **
+  var gorduraTd = construirTd(paciente.gordura, "info-gordura")  // se llama a la función de donde tomará el contenido de la celda 'gordura' **
+  var imcTd = construirTd(paciente.imc, "info-imc")  // se llama a la función de donde tomará el contenido de la celda 'imc' **
 
   // asignación al TR 'PACIENTE' de las filas TD ------------>
   pacienteTr.appendChild(nombreTd);
@@ -61,4 +47,13 @@ function construirTr(paciente) {
   pacienteTr.appendChild(imcTd);
 
   return pacienteTr;
+};
+
+// función que genera los datos para incluirlos en los 'TD' correspondientes --------------------------->
+function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'paciente.peso' y el dato tomado es 'info-peso' **
+  var td = document.createElement("td"); // crear elemento 'TD' **
+  td.classList.add(clase); // establecer clase al elemento 'TD' **
+  td.textContent = dato; // en el contenido incluir el dato recibido de e.g. 'info-peso' **
+
+  return td;
 };

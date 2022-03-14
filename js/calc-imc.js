@@ -16,13 +16,13 @@ for (var i = 0; i < pacientes.length; i++) {
   /* var ptImc = peso / altura**2; // fórmula índice masa corporal
   tdImc.textContent = ptImc; // el contenido de tdIMC será igual al resultado de la fórmula en 'ptImc' */
 
-  var pesoEsValido = true;
-  var alturaEsValida = true;
+  var pesoEsValido = validarPeso(peso);
+  var alturaEsValida = validarAltura(altura);
 
   //  CONDICIONALES --------------------------------------->
 
   // si una de las condiciones se cumple, el resultado es VERDADERO
-  if ((peso <= 0) || (peso >= 500)) {
+  if (!pesoEsValido) {
     console.log("----> el peso indicado no es válido");
     tdImc.textContent = "peso no válido";
     pesoEsValido = false;
@@ -30,7 +30,7 @@ for (var i = 0; i < pacientes.length; i++) {
   };
 
   // si una de las condiciones se cumple, el resultado es VERDADERO
-  if ((altura <= 0) || (altura >= 2.5)) {
+  if ((altura <= 0) || (altura >= 2.72)) {
     console.log("----> la altura indicada no es válida");
     tdImc.textContent = "altura no válida";
     alturaEsValida = false;
@@ -48,4 +48,22 @@ for (var i = 0; i < pacientes.length; i++) {
 function calcularIMC(peso, altura) {
   var ptImc = peso / altura ** 2;
   return ptImc.toFixed(2);
+};
+
+// VALIDA EL PESO
+function validarPeso(peso) {
+  if(peso > 0 && peso < 500){
+    return true;
+  } else {
+    return false;
+  }
+};
+
+// VALIDA LA ALTURA
+function validarAltura(altura) {
+  if(altura > 0 && altura <= 2.72){
+    return true;
+  } else {
+    return false;
+  }
 };
