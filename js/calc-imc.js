@@ -25,7 +25,7 @@ for (var i = 0; i < pacientes.length; i++) {
   if (!pesoEsValido) {
     console.log("----> el peso indicado no es válido");
     tdImc.textContent = "peso no válido";
-    pesoEsValido = false;
+    // pesoEsValido = false;
     paciente.classList.add("paciente-incorrecto");
   };
 
@@ -33,7 +33,7 @@ for (var i = 0; i < pacientes.length; i++) {
   if (!alturaEsValida) {
     console.log("----> la altura indicada no es válida");
     tdImc.textContent = "altura no válida";
-    alturaEsValida = false;
+    // alturaEsValida = false;
     paciente.classList.add("paciente-incorrecto");
   };
 
