@@ -57,3 +57,21 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 
   return td;
 };
+
+// función que valida el peso de los pacientes introducidos por el usuario ------------------------->
+function validarNuevoPaciente(paciente) {
+  if(validarPeso(paciente.peso)){
+    return true;
+ } else {
+   return false;
+   }
+ };
+ 
+ // función que valida la altura de los pacientes introducidos por el usuario ------------------------->
+ function validarNuevoPaciente(paciente) {
+   if(validarAltura(paciente.altura)){
+     return true;
+  } else {
+    return false;
+    }
+  };
