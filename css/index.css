@@ -68,8 +68,9 @@ table{
 td, th {
 	padding: .7em;
 	margin: 0;
-	border: 0.05em solid dimgray;
+	border: 0.1em solid dimgray;
 	text-align: center;
+	/* background-color: #fffbf4; */
 }
 
 th{
@@ -81,6 +82,7 @@ label{
 	color: #555;
 	display: block;
 	margin-bottom: .2em;
+	font-weight: 800;
 }
 
 .campo{

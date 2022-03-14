@@ -6,6 +6,17 @@ botonAdicionar.addEventListener("click", (e) => {
   var form = document.querySelector("#form-adicionar");  
   var paciente = tomarDatosPacientes(form); // objeto 'paciente' **
   var pacienteTr = construirTr (paciente); // crea TR del paciente adicionado **
+
+  if (!validarPesoPaciente(paciente)) {
+    console.log("peso del paciente incorrecto");
+    return;
+  };
+
+  if (!validarAlturaPaciente(paciente)) {
+    console.log("altura del paciente incorrecta");
+    return;
+  };
+
   var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
   tabla.appendChild(pacienteTr);
   form.reset();
@@ -59,19 +70,21 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 };
 
 // función que valida el peso de los pacientes introducidos por el usuario ------------------------->
-function validarNuevoPaciente(paciente) {
+function validarPesoPaciente(paciente) {
   if(validarPeso(paciente.peso)){
     return true;
- } else {
+  } else {
+   alert("peso inválido");
    return false;
    }
  };
  
  // función que valida la altura de los pacientes introducidos por el usuario ------------------------->
- function validarNuevoPaciente(paciente) {
+ function validarAlturaPaciente(paciente) {
    if(validarAltura(paciente.altura)){
      return true;
   } else {
+    alert("altura inválida");
     return false;
     }
   };
