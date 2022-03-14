@@ -9,12 +9,12 @@ botonAdicionar.addEventListener("click", (e) => {
 
   if (!validarPesoPaciente(paciente)) {
     console.log("peso del paciente incorrecto");
-    return;
+    return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
   };
 
   if (!validarAlturaPaciente(paciente)) {
     console.log("altura del paciente incorrecta");
-    return;
+    return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
   };
 
   var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
@@ -71,20 +71,18 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 
 // función que valida el peso de los pacientes introducidos por el usuario ------------------------->
 function validarPesoPaciente(paciente) {
-  if(validarPeso(paciente.peso)){
-    return true;
+  if(!validarPeso(paciente.peso)){
+    return "peso inválido";
   } else {
-   alert("peso inválido");
-   return false;
+   return "";
    }
  };
  
  // función que valida la altura de los pacientes introducidos por el usuario ------------------------->
  function validarAlturaPaciente(paciente) {
-   if(validarAltura(paciente.altura)){
-     return true;
+   if(!validarAltura(paciente.altura)){
+     return "altura inválida";
   } else {
-    alert("altura inválida");
-    return false;
+    return "";
     }
   };
