@@ -58,6 +58,11 @@ section h2{
 	margin-top: 20px;
 }
 
+#mensajes-errores {
+	color: tomato;
+	font-weight: 1000;
+}
+
 table{
 	width: 100%;
 	margin-bottom : .5em;
@@ -73,8 +78,12 @@ td, th {
 	/* background-color: #fffbf4; */
 }
 
+.info-nombre {
+	font-weight: 1000;
+}
+
 th{
-	font-weight: bold;
+	font-weight: 1000;
 	background-color: #5badad;
 }
 
@@ -87,7 +96,7 @@ label{
 
 .campo{
 	font-family: monospace;
-	font-size: ;
+	font-size: 1em;
 	margin: 5px;
 	padding-bottom: 1em;
 	width: 100%;

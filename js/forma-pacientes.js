@@ -7,7 +7,15 @@ botonAdicionar.addEventListener("click", (e) => {
   var paciente = tomarDatosPacientes(form); // objeto 'paciente' **
   var pacienteTr = construirTr (paciente); // crea TR del paciente adicionado **
 
-  if (!validarPesoPaciente(paciente)) {
+  var errores = validarPesoPaciente(paciente);
+  console.log(errores); 
+    
+  if(errores.length > 0){
+    exhibirMsjsErrores(errores);
+    return;
+  }
+
+  /* if (!validarPesoPaciente(paciente)) {
     console.log("peso del paciente incorrecto");
     return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
   };
@@ -15,7 +23,7 @@ botonAdicionar.addEventListener("click", (e) => {
   if (!validarAlturaPaciente(paciente)) {
     console.log("altura del paciente incorrecta");
     return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
-  };
+  }; */
 
   var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
   tabla.appendChild(pacienteTr);
@@ -71,18 +79,34 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 
 // función que valida el peso de los pacientes introducidos por el usuario ------------------------->
 function validarPesoPaciente(paciente) {
+  var errores = []
   if(!validarPeso(paciente.peso)){
-    return "peso inválido";
-  } else {
-   return "";
-   }
+    errores.push( "*peso inválido")
+  }
+  if(!validarAltura(paciente.altura)){
+    errores.push( "*altura inválida")
+  }
+   return errores;
  };
  
- // función que valida la altura de los pacientes introducidos por el usuario ------------------------->
- function validarAlturaPaciente(paciente) {
-   if(!validarAltura(paciente.altura)){
-     return "altura inválida";
-  } else {
-    return "";
-    }
-  };
+//  función que valida la altura de los pacientes introducidos por el usuario ------------------------->
+//  function validarAlturaPaciente(paciente) {
+//    var errores = []
+//    if(!validarAltura(paciente.altura)){
+//      return "altura inválida";
+//   } else {
+//     return "";
+//     }
+//     return errores;
+//   };
+
+function exhibirMsjsErrores (errores) {
+  var ul = document.querySelector("#mensajes-errores");
+  console.log(ul)
+
+  errores.forEach(function(error){
+    var li = document.createElement("li")
+    li.textContent = error;
+    ul.appendChild(li);
+  });
+};
