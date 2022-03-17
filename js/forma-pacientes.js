@@ -3,27 +3,17 @@ var botonAdicionar = document.querySelector("#adicionar-paciente");
 botonAdicionar.addEventListener("click", (e) => {
   event.preventDefault();
 
-  var form = document.querySelector("#form-adicionar");  
+  var form = document.querySelector("#form-adicionar");
   var paciente = tomarDatosPacientes(form); // objeto 'paciente' **
-  var pacienteTr = construirTr (paciente); // crea TR del paciente adicionado **
+  var pacienteTr = construirTr(paciente); // crea TR del paciente adicionado **
 
   var errores = validarPesoPaciente(paciente);
-  console.log(errores); 
-    
-  if(errores.length > 0){
+  console.log(errores);
+
+  if (errores.length > 0) {
     exhibirMsjsErrores(errores);
     return;
   }
-
-  /* if (!validarPesoPaciente(paciente)) {
-    console.log("peso del paciente incorrecto");
-    return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
-  };
-
-  if (!validarAlturaPaciente(paciente)) {
-    console.log("altura del paciente incorrecta");
-    return; // si los datos del paciente son erróneos no se ingresa a la tabla, se retorna vacío, no hay datos para ingresar a tabla por ser inválidos
-  }; */
 
   var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
   tabla.appendChild(pacienteTr);
@@ -84,33 +74,33 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 function validarPesoPaciente(paciente) {
   var errores = []
 
-  if(paciente.nombre.length <= 1){
+  if (paciente.nombre.length <= 1) {
     errores.push("*nombre requerido.");
   }
 
-  if(paciente.peso.length == 0){
+  if (paciente.peso.length == 0) {
     errores.push("*peso requerido.");
   }
 
-  if(paciente.altura.length == 0){
+  if (paciente.altura.length == 0) {
     errores.push("*altura requerida.");
   }
 
-  if(paciente.gordura.length == 0){
+  if (paciente.gordura.length == 0) {
     errores.push("*% de grasa corporal requerido.");
   }
 
-  if(!validarPeso(paciente.peso)){
+  if (!validarPeso(paciente.peso)) {
     errores.push("*peso inválido.");
   }
 
-  if(!validarAltura(paciente.altura)){
+  if (!validarAltura(paciente.altura)) {
     errores.push("*altura inválida.");
   }
 
-   return errores;
- };
- 
+  return errores;
+};
+
 //  función que valida la altura de los pacientes introducidos por el usuario ------------------------->
 //  function validarAlturaPaciente(paciente) {
 //    var errores = []
@@ -122,12 +112,12 @@ function validarPesoPaciente(paciente) {
 //     return errores;
 //   };
 
-function exhibirMsjsErrores (errores) {
+function exhibirMsjsErrores(errores) {
   var ul = document.querySelector("#mensajes-errores");
   ul.innerHTML = "";
   console.log(ul)
 
-  errores.forEach(function(error){
+  errores.forEach(function (error) {
     var li = document.createElement("li")
     li.textContent = error;
     ul.appendChild(li);

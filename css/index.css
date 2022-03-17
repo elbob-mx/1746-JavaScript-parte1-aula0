@@ -163,6 +163,12 @@ button[disabled=disabled], button:disabled {
 	font-weight: 1000;
 }
 
+.fadeOut {
+	opacity: 0;
+	transition: 0.5s;
+	background-color: teal;
+}
+
 footer {
 	text-align: center;
 	margin-top: 60px;

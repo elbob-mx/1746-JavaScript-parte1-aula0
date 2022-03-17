@@ -1,0 +1,31 @@
+<ul class="lista">
+  <li>Haz clic en A</li>
+  <li>Haz clic en B</li>
+  <li>Haz clic en C</li>
+</ul>
+
+<input id="campo"><button id="boton">Adicionar</button>
+
+<script>
+
+  var lista = document.querySelectorAll('li');
+
+  for(var i = 0; i < lista.length; i++) {
+
+      lista[i].addEventListener('click', function() {
+
+             alert(this.textContent);
+      });
+  }
+
+  var boton = document.querySelector('#boton');
+  var input = document.querySelector('#campo');
+  var lista = document.querySelector('.lista');
+
+  boton.addEventListener('click',function() {
+      var li = document.createElement('li');
+      li.textContent = input.value;
+      lista.appendChild(li);
+  });
+
+</script>
