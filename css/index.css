@@ -61,6 +61,7 @@ section h2{
 #mensajes-errores {
 	color: tomato;
 	font-weight: 1000;
+	font-style: italic;
 }
 
 table{

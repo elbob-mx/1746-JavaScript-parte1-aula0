@@ -29,6 +29,9 @@ botonAdicionar.addEventListener("click", (e) => {
   tabla.appendChild(pacienteTr);
   form.reset();
 
+  var msjsErrores = document.querySelector("#mensajes-errores");
+  msjsErrores.innerHTML = "";
+
 });
 
 // FUNCIONES *********************************
@@ -80,12 +83,31 @@ function construirTd(dato, clase) { //los datos tomarán desde la celda e.g. 'pa
 // función que valida el peso de los pacientes introducidos por el usuario ------------------------->
 function validarPesoPaciente(paciente) {
   var errores = []
+
+  if(paciente.nombre.length <= 1){
+    errores.push("*nombre requerido.");
+  }
+
+  if(paciente.peso.length == 0){
+    errores.push("*peso requerido.");
+  }
+
+  if(paciente.altura.length == 0){
+    errores.push("*altura requerida.");
+  }
+
+  if(paciente.gordura.length == 0){
+    errores.push("*% de grasa corporal requerido.");
+  }
+
   if(!validarPeso(paciente.peso)){
-    errores.push( "*peso inválido")
+    errores.push("*peso inválido.");
   }
+
   if(!validarAltura(paciente.altura)){
-    errores.push( "*altura inválida")
+    errores.push("*altura inválida.");
   }
+
    return errores;
  };
  
@@ -102,6 +124,7 @@ function validarPesoPaciente(paciente) {
 
 function exhibirMsjsErrores (errores) {
   var ul = document.querySelector("#mensajes-errores");
+  ul.innerHTML = "";
   console.log(ul)
 
   errores.forEach(function(error){
