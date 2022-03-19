@@ -12,6 +12,8 @@
     <script type="text/javascript" src="js/calc-imc.js" defer></script>
     <script type="text/javascript" src="js/forma-pacientes.js" defer></script>
     <script type="text/javascript" src="js/eliminar-pacientes.js" defer></script>
+    <script type="text/javascript" src="js/filtro-pacientes.js" defer></script>
+    <script type="text/javascript" src="js/buscar-pacientes.js" defer></script>
   </head>
   <body>
     <header>
@@ -22,6 +24,7 @@
     <main>
       <section class="container">
         <h2>Mis pacientes</h2>
+        <span>Buscar al paciente: </span><input type="text" name="filtro" id="filtrar-tabla" placeholder="---">
         <table>
           <thead>
             <tr>
@@ -73,6 +76,9 @@
             </tr>
           </tbody>
         </table>
+
+          <button id="buscar-paciente" class="boton bto-principal">Buscar paciente</button>
+
       </section>
     </main>
 
@@ -88,9 +94,9 @@
             id="nombre"
             name="nombre"
             type="text"
-            placeholder="digite el nombre del paciente"
+            placeholder="Nombre del paciente"
             class="campo"
-            onkeydown="return /[a-z]/i.test(event.key)"
+            onkeydown="return /[a-z._-\s]/i.test(event.key)"
           />
         </div>
         <div class="grupo">
@@ -99,7 +105,7 @@
             id="peso"
             name="peso"
             type="text"
-            placeholder="digite el peso del paciente"
+            placeholder="Peso del paciente"
             class="campo campo-medio"
           />
         </div>
@@ -109,7 +115,7 @@
             id="altura"
             name="altura"
             type="text"
-            placeholder="digite la altura del paciente"
+            placeholder="Altura del paciente"
             class="campo campo-medio"
           />
         </div>
@@ -118,7 +124,7 @@
           <input
             id="gordura"
             type="text"
-            placeholder="digite el porcentaje de gordura del paciente"
+            placeholder="% de gordura del paciente"
             class="campo campo-medio"
           />
         </div>

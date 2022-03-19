@@ -95,6 +95,13 @@ label{
 	font-weight: 800;
 }
 
+#filtrar-tabla {
+	width: 200px;
+	height: 30px;
+	margin-bottom: 10px;
+	outline: none;
+}
+
 .campo{
 	font-family: monospace;
 	font-size: 1em;
@@ -153,6 +160,11 @@ button[disabled=disabled], button:disabled {
     margin: 50px;
 }
 
+#buscar-paciente {
+	margin-top: 20px;
+	margin-bottom: 25px;
+}
+
 .campo-invalido{
 	border: 1px solid tomato;
 }
@@ -167,6 +179,10 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: 0.5s;
 	background-color: teal;
+}
+
+.invisible {
+	display: none;
 }
 
 footer {
