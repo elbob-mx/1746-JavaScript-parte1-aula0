@@ -5,7 +5,6 @@ botonAdicionar.addEventListener("click", (e) => {
 
   var form = document.querySelector("#form-adicionar");
   var paciente = tomarDatosPacientes(form); // objeto 'paciente' **
-  var pacienteTr = construirTr(paciente); // crea TR del paciente adicionado **
 
   var errores = validarPesoPaciente(paciente);
   console.log(errores);
@@ -15,8 +14,7 @@ botonAdicionar.addEventListener("click", (e) => {
     return;
   }
 
-  var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
-  tabla.appendChild(pacienteTr);
+  sumPacienteEnTabla(paciente);
   form.reset();
 
   var msjsErrores = document.querySelector("#mensajes-errores");
@@ -25,6 +23,12 @@ botonAdicionar.addEventListener("click", (e) => {
 });
 
 // FUNCIONES *********************************
+
+function sumPacienteEnTabla(paciente) {
+  var pacienteTr = construirTr(paciente); // crea TR del paciente adicionado **
+  var tabla = document.querySelector("#tabla-pacientes"); // declara la variable 'tabla' tomado de la 'tabla-pacientes' **
+  tabla.appendChild(pacienteTr); // suma paciente a la tabla **  
+}
 
 // función que crea el objeto 'paciente' **
 function tomarDatosPacientes(form) {
